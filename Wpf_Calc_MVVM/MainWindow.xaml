@@ -1,0 +1,30 @@
+﻿<Window x:Class="Wpf_Calc_MVVM.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Wpf_Calc_MVVM"
+        mc:Ignorable="d"
+        Title="Калькулятор" Height="450" Width="800"
+        FontSize="30">
+    <Grid>
+        <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
+            <TextBlock>Выберите арифметическую операцию</TextBlock>
+            <ComboBox Name="comboBoxOperations"  Margin="0,10">
+                <ComboBoxItem>Сложение</ComboBoxItem>
+                <ComboBoxItem>Вычитание</ComboBoxItem>
+                <ComboBoxItem>Деление</ComboBoxItem>
+                <ComboBoxItem>Умножение</ComboBoxItem>
+            </ComboBox>
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                <TextBox Name="textBoxFirstValue" Width="100" ></TextBox>
+                <Label Name="labelOperationSign">+</Label>
+                <TextBox Name="textBoxSecondValue" Width="100"></TextBox>
+            </StackPanel>
+            <Button Name="buttonCalc"  Margin="0,10">Вычислить</Button>
+            <GroupBox Header="Результат">
+                <TextBlock Name="textBlockResult" Margin="10,0"></TextBlock>
+            </GroupBox>
+        </StackPanel>
+    </Grid>
+</Window>
