@@ -7,70 +7,16 @@ using System.Windows.Controls;
 
 namespace Wpf_Calc_MVVM
 {
-    internal class Model
+    public class Model
     {
+      
         // блок с данными
 
-        private static double firstValue;
-        private static double secondValue;
-        private static double result;
+        public static double firstValue;
+        public static double secondValue;
+        public static double result;
 
-        // блок с бизнес-логикой
-
-        // свойство для получения значение первого числа
-        public static double GetSetFirstValue
-        {
-            get
-            {
-                return firstValue;
-            }
-            set
-            {
-                firstValue = value;
-            }
-        }
-
-        // свойство для получения значение второго числа
-        public static double GetSetSecondValue
-        {
-            get
-            {
-                return secondValue;
-            }
-            set
-            {
-                secondValue = value;
-            }
-        }
-
-        // метод для определения выполняется ли деление на ноль
-        public static bool isDivisionWithZero(int comboBoxValue)
-        {
-            if (secondValue == 0 && comboBoxValue == 2)
-                return true;
-
-            return false;
-        }
-
-        // метод для подсчета значений
-        public static void calcValues(int comboBoxValue)
-        {
-            switch (comboBoxValue)
-            {
-                case 0:
-                    result = firstValue + secondValue;
-                    break;
-                case 1:
-                    result = firstValue - secondValue;
-                    break;
-                case 2:
-                    result = firstValue / secondValue;
-                    break;
-                case 3:
-                    result = firstValue * secondValue;
-                    break;
-            }
-        }
-  
+        public static List<string> dataList = new List<string> { "Сложение", "Вычитание", "Умножение","Деление" };
+        public static List<string> labelList = new List<string> { "+", "-", "*", "/" };
     }
 }

@@ -10,21 +10,19 @@
     <Grid>
         <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
             <TextBlock>Выберите арифметическую операцию</TextBlock>
-            <ComboBox Name="comboBoxOperations"  Margin="0,10">
-                <ComboBoxItem>Сложение</ComboBoxItem>
-                <ComboBoxItem>Вычитание</ComboBoxItem>
-                <ComboBoxItem>Деление</ComboBoxItem>
-                <ComboBoxItem>Умножение</ComboBoxItem>
-            </ComboBox>
+            <ComboBox ItemsSource="{Binding comboChange}" SelectedIndex="{Binding indexSelected}" Margin="0,10"/>
             <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
-                <TextBox Name="textBoxFirstValue" Width="100" ></TextBox>
-                <Label Name="labelOperationSign">+</Label>
-                <TextBox Name="textBoxSecondValue" Width="100"></TextBox>
+                <TextBox Text="{Binding firstValue}" Width="100" ></TextBox>
+                <Label Content="{Binding labelOfOperation}"></Label>
+                <TextBox Text="{Binding secondValue}" Width="100"></TextBox>
             </StackPanel>
-            <Button Name="buttonCalc"  Margin="0,10">Вычислить</Button>
+            <Button Command="{Binding calcResult}"  Margin="0,10">Вычислить</Button>
             <GroupBox Header="Результат">
-                <TextBlock Name="textBlockResult" Margin="10,0"></TextBlock>
+                <TextBlock Text="{Binding textBlockResult}" Margin="10,0"></TextBlock>
             </GroupBox>
         </StackPanel>
+ 
+        <!--<ComboBox ItemsSource="{Binding ComboChange}" SelectedIndex="{Binding IndexSelected}"></ComboBox>-->
+
     </Grid>
 </Window>
